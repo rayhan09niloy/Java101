@@ -4,7 +4,7 @@ public class MatrixA {
             {1, 2, 3},
             {4, 5, 6},
             {7, 8, 9}
-        };
+        }; // Matrix A is 3x3; Length = 3
 
         int[][] matrixB = {
             {1, 2, 3},
@@ -12,28 +12,28 @@ public class MatrixA {
             {7, 8, 9}
         };
 
-        // Dimensions
-        int rowSizeA = matrixA.length;
-        int columnSizeA = matrixA[0].length;
-        int columnSizeB = matrixB[0].length;
+        // Matrix dimensions
+        int numRowsA = matrixA.length;        // Rows in matrix A
+        int numColsA = matrixA[0].length;     // Each row is itself an array, and the length of each row represents the number of columns in the matrix
+        int numColsB = matrixB[0].length;     // Each row is itself an array, and the length of each row represents the number of columns in the matrix
 
         // Result matrix
-        int[][] resultMatrix = new int[rowSizeA][columnSizeB];
+        int[][] resultMatrix = new int[matrixA.length][matrixB[0].length];
+
 
         // Matrix multiplication
-        for (int i = 0; i < rowSizeA; i++) {
-            for (int j = 0; j < columnSizeB; j++) {
-                for (int k = 0; k < columnSizeA; k++) {
-                    resultMatrix[i][j] += matrixA[i][k] * matrixB[k][j];
+        for (int row = 0; row < numRowsA; row++) {
+            for (int col = 0; col < numColsB; col++) {
+                for (int k = 0; k < numColsA; k++) {
+                    resultMatrix[row][col] += matrixA[row][k] * matrixB[k][col];
                 }
             }
         }
 
         // Display the result
-        System.out.println("Resultant Matrix:");
-        for (int i = 0; i < rowSizeA; i++) {
-            for (int j = 0; j < columnSizeB; j++) {
-                System.out.print(resultMatrix[i][j] + " ");
+        for (int[] rowArray : resultMatrix) {
+            for (int value : rowArray) {
+                System.out.print(value + " ");
             }
             System.out.println();
         }
