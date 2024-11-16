@@ -13,18 +13,18 @@ public class MatrixA {
         };
 
         // Matrix dimensions
-        int numRowsA = matrixA.length;        // Rows in matrix A
-        int numColsA = matrixA[0].length;     // Each row is itself an array, and the length of each row represents the number of columns in the matrix
-        int numColsB = matrixB[0].length;     // Each row is itself an array, and the length of each row represents the number of columns in the matrix
+        int rowsA = matrixA.length;        // Rows in matrix A
+        int colsA = matrixA[0].length;     // Each row is itself an array, and the length of each row represents the number of columns in the matrix
+        int colsB = matrixB[0].length;     // Each row is itself an array, and the length of each row represents the number of columns in the matrix
 
         // Result matrix
         int[][] resultMatrix = new int[matrixA.length][matrixB[0].length];
 
 
         // Matrix multiplication
-        for (int row = 0; row < numRowsA; row++) {
-            for (int col = 0; col < numColsB; col++) {
-                for (int k = 0; k < numColsA; k++) {
+        for (int row = 0; row < rowsA; row++) {
+            for (int col = 0; col < colsB; col++) {
+                for (int k = 0; k < colsA; k++) {
                     resultMatrix[row][col] += matrixA[row][k] * matrixB[k][col];
                 }
             }
