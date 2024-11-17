@@ -6,18 +6,18 @@ public class dBY3 {
         Scanner sc = new Scanner(System.in);
         
         //dynamic approch, by taking an input
-        System.out.println("Enter a number: ");
+        System.out.println("\nEnter a number: ");
         int num = sc.nextInt();
 
         // call the validator function
         int digit = validator(num);
 
-        // check if the number is divisible by 3 or not
+        // check if the number is devided by 3 or not
         if(digit % 3 == 0) 
         {
-            System.out.println("The number " + num + " is divisible by 3");
+            System.out.println("The number " + num + " is devided by 3");
         } else {
-            System.out.println("The number " + num + " is not divisible by 3");
+            System.out.println("The number " + num + " is not devided by 3");
         }
 
         sc.close();
