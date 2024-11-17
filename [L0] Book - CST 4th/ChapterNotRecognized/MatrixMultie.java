@@ -32,11 +32,11 @@ public class MatrixMultie {
         } 
 
         // Display the result
-        for (int[] rowArray : resultMatrix) {
-            for (int value : rowArray) {
-                System.out.print(value + " ");
+        for (int i = 0; i < resultMatrix.length; i++) {
+            for (int j = 0; j < resultMatrix[i].length; j++) {
+                System.out.print(resultMatrix[i][j] + " ");
             }
             System.out.println();
-        }
+        }        
     }
 }
