@@ -1,4 +1,5 @@
 public class MatrixA {
+    // Doing a matrix multiplication B.A
     public static void main(String[] args) {
         int[][] matrixA = {
             {1, 2, 3},
@@ -13,22 +14,22 @@ public class MatrixA {
         };
 
         // Matrix dimensions
-        int rowsA = matrixA.length;        // Rows in matrix A
-        int colsA = matrixA[0].length;     // Each row is itself an array, and the length of each row represents the number of columns in the matrix
-        int colsB = matrixB[0].length;     // Each row is itself an array, and the length of each row represents the number of columns in the matrix
+        int rowsA = matrixA.length;    // Rows in matrix A
+        int colsA = matrixA[0].length; // Each row is itself an array, and the length of each row represents the number of columns in the matrix
+        int colsB = matrixB[0].length; // Each row is itself an array, and the length of each row represents the number of columns in the matrix
 
         // Result matrix
-        int[][] resultMatrix = new int[matrixA.length][matrixB[0].length];
-
+        int[][] resultMatrix = new int[rowsA][colsB]; // Result matrix is 3x3; Length = 3
 
         // Matrix multiplication
+        //A[m][n] * B[n][p] = C[m][p]
         for (int row = 0; row < rowsA; row++) {
             for (int col = 0; col < colsB; col++) {
                 for (int k = 0; k < colsA; k++) {
                     resultMatrix[row][col] += matrixA[row][k] * matrixB[k][col];
                 }
             }
-        }
+        } 
 
         // Display the result
         for (int[] rowArray : resultMatrix) {
