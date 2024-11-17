@@ -1,4 +1,4 @@
-public class MatrixA {
+public class MatrixMultie {
     // Doing a matrix multiplication B.A
     public static void main(String[] args) {
         int[][] matrixA = {
@@ -23,10 +23,10 @@ public class MatrixA {
 
         // Matrix multiplication
         //A[m][n] * B[n][p] = C[m][p]
-        for (int row = 0; row < rowsA; row++) {
-            for (int col = 0; col < colsB; col++) {
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < colsB; j++) {
                 for (int k = 0; k < colsA; k++) {
-                    resultMatrix[row][col] += matrixA[row][k] * matrixB[k][col];
+                    resultMatrix[i][j] += matrixA[i][k] * matrixB[k][j];
                 }
             }
         } 
