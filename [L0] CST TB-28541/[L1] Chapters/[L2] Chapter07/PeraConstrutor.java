@@ -20,7 +20,7 @@ class Student {
         System.out.println("Roll No: " + rollNo);
         System.out.println("Grade Standerd: " + gradeStanderd);
     }
-}
+} 
 
 public class PeraConstrutor {
     public static void main(String[] args) {
